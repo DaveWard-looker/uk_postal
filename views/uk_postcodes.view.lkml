@@ -51,11 +51,13 @@ view: uk_postcodes {
   dimension: postcode_area {
     type: string
     sql: ${TABLE}.postcode_area ;;
+    map_layer_name: uk_postcode_areas
   }
 
   dimension: postcode_district {
     type: string
     sql: ${TABLE}.postcode_district ;;
+    map_layer_name: uk_postal_districts
   }
 
   dimension: postcode_fixed_width_eight {
@@ -76,6 +78,7 @@ view: uk_postcodes {
   dimension: postcode_sector {
     type: string
     sql: ${TABLE}.postcode_sector ;;
+    map_layer_name: uk_postal_sectors
   }
 
   dimension: status {
