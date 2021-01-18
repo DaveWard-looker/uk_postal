@@ -2,6 +2,41 @@ view: uk_postcodes {
   sql_table_name: `daveward_demodataset.uk_postcodes`
     ;;
 
+parameter: map_type {
+  type: string
+  allowed_value: {
+    label: "Postal District"
+    value: "postal_district"
+  }
+  allowed_value: {
+    label: "Postal Sector"
+    value: "postal_sector"
+  }
+  allowed_value: {
+    label: "Postal Area"
+    value: "postal_area"
+  }
+  allowed_value: {
+    label: "Post Code"
+    value: "post_code"
+  }
+
+}
+
+
+dimension: post_map {
+type: string
+sql:
+case
+when {% parameter map_type %} = 'postal_area' then ${postcode_area}
+when {% parameter map_type %} = 'postal_sector' then ${postcode_sector}
+when {% parameter map_type %} = 'postal_district' then ${postcode_district}
+else ${postcode}
+end
+;;
+
+}
+
   dimension: country {
     type: string
     map_layer_name: countries
@@ -27,6 +62,14 @@ view: uk_postcodes {
     type: string
     sql: ${TABLE}.longitude ;;
   }
+
+  dimension: location {
+    type: location
+    sql_latitude: ${latitude} ;;
+    sql_longitude: ${longitude} ;;
+  }
+
+
 
   dimension: northing {
     type: string
