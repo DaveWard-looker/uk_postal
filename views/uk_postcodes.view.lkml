@@ -135,7 +135,26 @@ end
   }
 
   measure: count {
+    label: "Count Postcode"
     type: count
     drill_fields: []
+  }
+
+  measure: count_area {
+    type: count_distinct
+    sql: ${postcode_area} ;;
+    value_format_name: decimal_0
+  }
+
+  measure: count_district {
+    type: count_distinct
+    sql: ${postcode_district} ;;
+    value_format_name: decimal_0
+  }
+
+  measure: count_sector {
+    type: count_distinct
+    sql: ${postcode_sector} ;;
+    value_format_name: decimal_0
   }
 }
