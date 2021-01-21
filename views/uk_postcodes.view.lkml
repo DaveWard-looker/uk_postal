@@ -95,12 +95,20 @@ end
     type: string
     sql: ${TABLE}.postcode_area ;;
     map_layer_name: uk_postcode_areas
+    link: {
+      label: "Postcode Sector Dashboard"
+      url: "/dashboards-next/4?Postcode+Area={{ value }}"
+    }
   }
 
   dimension: postcode_district {
     type: string
     sql: ${TABLE}.postcode_district ;;
     map_layer_name: uk_postal_districts
+    link: {
+      label: "Postcode Sector Dashboard"
+      url: "/dashboards-next/4?Postcode+District={{ value }}"
+    }
   }
 
   dimension: postcode_fixed_width_eight {
