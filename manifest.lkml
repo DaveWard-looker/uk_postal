@@ -5,5 +5,5 @@
 # #
 
 constant: mapbox_api_key {
-  value: "pk.eyJ1IjoiZGFpdGhpYmhhcmQiLCJhIjoiY2tocTJ4bXIxMGdmazJ6cnN0dGw1NzVmMyJ9.iT2SqU9tFFNJnOh1GWBYig"
+  value: "pk.eyJ1IjoiZGFpdGhpYmhhcmQiLCJhIjoiY2t3cTczcjVpMGpzYjJ0cW91N3YwZjF1dCJ9.VhCDvyVe0fBQrmwRySjZVQ"
 }
